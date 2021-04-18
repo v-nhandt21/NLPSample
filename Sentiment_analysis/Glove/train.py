@@ -18,10 +18,10 @@ def train(net,model_name):
 
     criterion = nn.BCELoss()
     criterion = criterion.cuda()
-    optimizer = optim.Adam(net.parameters(), lr = 0.01, weight_decay=0.01)
+    optimizer = optim.Adam(net.parameters(), lr = 0.001, weight_decay=0.0001)
 
     step = 0
-    n_epochs = 10
+    n_epochs = 70
     clip = 5
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     
@@ -34,6 +34,9 @@ def train(net,model_name):
 
             step += 1
             inputs, labels = inputs.to(device), labels.to(device)
+
+            print(inputs[0])
+            print(inputs.shape)
             
             net.zero_grad()
             output, h = net(inputs)

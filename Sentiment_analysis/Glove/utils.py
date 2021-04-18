@@ -40,19 +40,17 @@ def LoadData():
 
     MAX_SEQ_LEN = 50
 
-    TEXT = Field(sequential=True,use_vocab=True, batch_first=True,fix_length=MAX_SEQ_LEN ,tokenize=Norm)
+    TEXT = Field(sequential=True)#,use_vocab=True, batch_first=True,fix_length=MAX_SEQ_LEN, pad_first=True ,tokenize=Norm)
     TAGS = Field(sequential=False, use_vocab=False, batch_first=True, dtype=torch.float)
 
     fields = [('label', TAGS), ('text', TEXT)]
 
     train, valid, test = TabularDataset.splits(path="../data", train='train.tsv', validation='dev.tsv',
                                             test='test.tsv', format='TSV', fields=fields, skip_header=True)
-
+#
     device = "cuda"
-    train_iter = BucketIterator(train, batch_size=64, sort_key=lambda x: len(x.text),
-                                device=device, train=True, sort=True, sort_within_batch=True)
-    valid_iter = BucketIterator(valid, batch_size=64, sort_key=lambda x: len(x.text),
-                                device=device, train=True, sort=True, sort_within_batch=True)
+    train_iter = BucketIterator(train, batch_size=64, device=device, train=True)
+    valid_iter = BucketIterator(valid, batch_size=64, device=device, train=True)
     test_iter = Iterator(test, batch_size=1, device=device, train=False, shuffle=False, sort=False)
 
     embed_len = 300
