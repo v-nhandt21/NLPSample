@@ -40,7 +40,4 @@ shell run.sh train sentiment lstm
 
 #### Get pretrain of all model
 
-```
-gdown
-tar xz
-```
+[![Checkpoints](https://colab.research.google.com/assets/colab-badge.svg)](https://drive.google.com/drive/folders/1Zulcr2Lp5l8VAV0K7XzG641ffXcfqnxP?usp=sharing)
