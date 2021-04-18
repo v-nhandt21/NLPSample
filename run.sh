@@ -1,6 +1,3 @@
-if [[( $1 == "train")]];
-then
-
 #
 if [[( $2 == "sequence")]];
 then
@@ -77,5 +74,4 @@ then
 python Sentiment_analysis/Glove/${1}.py att_bilstm_add
 fi
 
-fi
 fi
