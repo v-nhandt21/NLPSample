@@ -34,9 +34,6 @@ def train(net,model_name):
 
             step += 1
             inputs, labels = inputs.to(device), labels.to(device)
-
-            print(inputs[0])
-            print(inputs.shape)
             
             net.zero_grad()
             output, h = net(inputs)
