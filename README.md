@@ -41,3 +41,8 @@ shell run.sh train sentiment lstm
 #### Get pretrain of all model
 
 [![Checkpoints](https://colab.research.google.com/assets/colab-badge.svg)](https://drive.google.com/drive/folders/1Zulcr2Lp5l8VAV0K7XzG641ffXcfqnxP?usp=sharing)
+
+Put the **checkpoints** folder in project folder **NLPSample/checkpoints**
+```
+shell run.sh evaluation <problem> <model>
+```
