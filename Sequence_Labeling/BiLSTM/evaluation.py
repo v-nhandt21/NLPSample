@@ -56,6 +56,3 @@ if __name__ == '__main__':
     key = [str(line).rstrip('\n') for line in open("../data/test.label")]
     prediction = [str(line).rstrip('\n') for line in open("../data/predict.txt")]
     score(key, prediction, verbose=True)
-
-# Precision = 72.72727272727273 , Recall = 4.4692737430167595 , F1 = 8.421052631578947  30 epoch
-# Precision = 54.54545454545455 , Recall = 100.0 , F1 = 70.58823529411765    50 epoch

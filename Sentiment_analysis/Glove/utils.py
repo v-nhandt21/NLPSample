@@ -49,9 +49,9 @@ def LoadData():
                                             test='test.tsv', format='TSV', fields=fields, skip_header=True)
 
     device = "cuda"
-    train_iter = BucketIterator(train, batch_size=16, sort_key=lambda x: len(x.text),
+    train_iter = BucketIterator(train, batch_size=64, sort_key=lambda x: len(x.text),
                                 device=device, train=True, sort=True, sort_within_batch=True)
-    valid_iter = BucketIterator(valid, batch_size=16, sort_key=lambda x: len(x.text),
+    valid_iter = BucketIterator(valid, batch_size=64, sort_key=lambda x: len(x.text),
                                 device=device, train=True, sort=True, sort_within_batch=True)
     test_iter = Iterator(test, batch_size=1, device=device, train=False, shuffle=False, sort=False)
 
