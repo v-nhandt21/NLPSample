@@ -1,5 +1,5 @@
 from model import BERT
-from utils import LoadData, save_checkpoint, save_metrics
+from utils import LoadData, save_checkpoint
 import torch
 import torch.optim as optim
 import torch.nn as nn

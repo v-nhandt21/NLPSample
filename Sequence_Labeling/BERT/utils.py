@@ -49,7 +49,7 @@ def LoadData():
                         preprocessing = tag_preprocessor)
 
     fields = [('text', TEXT), ('tag', TAGS)]
-    train, valid, test = TabularDataset.splits(path="../data", train='train.tsv', validation='dev.tsv',
+    train, valid, test = TabularDataset.splits(path="Sequence_Labeling/data", train='train.tsv', validation='dev.tsv',
                                             test='test.tsv', format='TSV', fields=fields, skip_header=True)
 
     TAGS.build_vocab(train)
@@ -80,7 +80,7 @@ def save_checkpoint(save_path, model):
     if save_path == None:
         return
     
-    save_path = "../../checkpoints/" + save_path
+    save_path = "checkpoints/" + save_path
 
     state_dict = {'model_state_dict': model.state_dict()}
     
@@ -92,7 +92,7 @@ def load_checkpoint(load_path, model):
     if load_path==None:
         return
 
-    load_path = "../../checkpoints/" + load_path
+    load_path = "checkpoints/" + load_path
     
     state_dict = torch.load(load_path, map_location=device)
     print(f'Model loaded from <== {load_path}')

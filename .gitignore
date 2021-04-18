@@ -132,3 +132,4 @@ dmypy.json
 Sentiment_analysis/Glove/.vector_cache/*
 Sequence_Labeling/BiLSTM/.vector_cache/*
 checkpoints/*
+Sentiment_analysis/Assignment123/*

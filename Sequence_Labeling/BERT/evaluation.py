@@ -175,7 +175,7 @@ device = "cuda"
 count = 0
 def evaluate(model, test_loader, tagvocab):
     model.eval()
-    with open("../data/predict.txt", "w+", encoding="utf-8") as fw:
+    with open("Sequence_Labeling/data/predict.txt", "w+", encoding="utf-8") as fw:
         with torch.no_grad():
             for (text,tags), _ in test_loader:
                 predictions = model(text)
@@ -190,9 +190,9 @@ def evaluate(model, test_loader, tagvocab):
                 print(predicted_tags)
     
 def check_infer():
-    with open("../data/test.label", "r", encoding="utf-8") as fr:
+    with open("Sequence_Labeling/data/test.label", "r", encoding="utf-8") as fr:
         text_infer = fr.read().splitlines()
-    with open("../data/predict.txt", "r", encoding="utf-8") as fr1:
+    with open("Sequence_Labeling/data/predict.txt", "r", encoding="utf-8") as fr1:
         text_infer1 = fr1.read().splitlines()
     for t, t1 in zip(text_infer, text_infer1):
         assert len(t.split(" ")) == len(t1.split(" "))
@@ -207,8 +207,8 @@ if __name__ == '__main__':
 
     evaluate(best_model, test_iter, tagvocab)
 
-    key = [str(line).rstrip('\n') for line in open("../data/test.label")]
-    prediction = [str(line).rstrip('\n') for line in open("../data/predict.txt")]
+    key = [str(line).rstrip('\n') for line in open("Sequence_Labeling/data/test.label")]
+    prediction = [str(line).rstrip('\n') for line in open("Sequence_Labeling/data/predict.txt")]
     score(key, prediction, verbose=True)
 
     #check_infer()
