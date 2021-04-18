@@ -22,7 +22,7 @@ def evaluation(net,model_name):
     count = 0
     sums = 0
 
-    for (v_labels, v_inputs), _ in test_loader:
+    for (v_labels, v_inputs), _ in test_iter:
         
         sums = sums + len(v_inputs)
         
