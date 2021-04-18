@@ -103,14 +103,14 @@ def load_metrics(load_path):
 
 
 if __name__ == '__main__':
-    filein = "/home/ubuntu/NLPCourse/Assignment/Sentiment_analysis/data/train.txt"
-    fileout = "/home/ubuntu/NLPCourse/Assignment/Sentiment_analysis/data/train.tsv"
+    filein = "../data/train.txt"
+    fileout = "../data/train.tsv"
 
-    filein1 = "/home/ubuntu/NLPCourse/Assignment/Sentiment_analysis/data/dev.txt"
-    fileout1 = "/home/ubuntu/NLPCourse/Assignment/Sentiment_analysis/data/dev.tsv"
+    filein1 = "../data/dev.txt"
+    fileout1 = "../data/dev.tsv"
 
-    filein2 = "/home/ubuntu/NLPCourse/Assignment/Sentiment_analysis/data/test.txt"
-    fileout2 = "/home/ubuntu/NLPCourse/Assignment/Sentiment_analysis/data/test.tsv"
+    filein2 = "../data/test.txt"
+    fileout2 = "../data/test.tsv"
 
     NormData(filein,fileout)
     NormData(filein1,fileout1)

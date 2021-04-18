@@ -14,9 +14,9 @@ device = "cuda"
 count = 0
     
 def check_infer():
-    with open("/home/ubuntu/NLPCourse/Assignment/Sequence_Labeling/test.label", "r", encoding="utf-8") as fr:
+    with open("../data/test.label", "r", encoding="utf-8") as fr:
         text_infer = fr.read().splitlines()
-    with open("/home/ubuntu/NLPCourse/Assignment/Sequence_Labeling/predict.txt", "r", encoding="utf-8") as fr1:
+    with open("../data/predict.txt", "r", encoding="utf-8") as fr1:
         text_infer1 = fr1.read().splitlines()
     for t, t1 in zip(text_infer, text_infer1):
         
@@ -30,7 +30,7 @@ def evaluate(model):
 
         model.eval()
         out = []
-        with open("/home/ubuntu/NLPCourse/Assignment/Sequence_Labeling/predict_bilstm.txt", "w+", encoding="utf-8") as fw:
+        with open("../data/predict_bilstm.txt", "w+", encoding="utf-8") as fw:
             with torch.no_grad():
                 for (text,tags), _ in test_iter:
 

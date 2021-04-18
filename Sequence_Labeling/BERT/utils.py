@@ -100,19 +100,19 @@ def load_checkpoint(load_path, model):
     model.load_state_dict(state_dict['model_state_dict'])
 
 if __name__ == '__main__':
-    filetext = "/home/ubuntu/NLPCourse/Assignment/Sequence_Labeling/train.text"
-    filetag = "/home/ubuntu/NLPCourse/Assignment/Sequence_Labeling/train.label"
-    fileout = "/home/ubuntu/NLPCourse/Assignment/Sequence_Labeling/train.tsv"
+    filetext = "../data/train.text"
+    filetag = "../data/train.label"
+    fileout = "../data/train.tsv"
     NormData(filetext,filetag,fileout)
 
-    filetext = "/home/ubuntu/NLPCourse/Assignment/Sequence_Labeling/dev.text"
-    filetag = "/home/ubuntu/NLPCourse/Assignment/Sequence_Labeling/dev.label"
-    fileout = "/home/ubuntu/NLPCourse/Assignment/Sequence_Labeling/dev.tsv"
+    filetext = "../data/dev.text"
+    filetag = "../data/dev.label"
+    fileout = "../data/dev.tsv"
     NormData(filetext,filetag,fileout)
 
-    filetext = "/home/ubuntu/NLPCourse/Assignment/Sequence_Labeling/test.text"
-    filetag = "/home/ubuntu/NLPCourse/Assignment/Sequence_Labeling/test.label"
-    fileout = "/home/ubuntu/NLPCourse/Assignment/Sequence_Labeling/test.tsv"
+    filetext = "../data/test.text"
+    filetag = "../data/test.label"
+    fileout = "../data/test.tsv"
     NormData(filetext,filetag,fileout)
     
                 

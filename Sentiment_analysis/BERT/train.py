@@ -10,7 +10,6 @@ device = "cuda"
 def train(model,optimizer,criterion = nn.BCELoss(),train_loader = train_iter,valid_loader = valid_iter,
         num_epochs = 4,
         eval_every = len(train_iter) // 2,
-        file_path = "/home/ubuntu/NLPCourse/Assignment/Sentiment_analysis/Assignment4_BERTScratch",
         best_valid_loss = float("Inf")):
     
     # initialize running values
@@ -91,11 +90,7 @@ def train(model,optimizer,criterion = nn.BCELoss(),train_loader = train_iter,val
                 # checkpoint
                 if best_valid_loss > average_valid_loss:
                     best_valid_loss = average_valid_loss
-                    save_checkpoint(file_path + '/' + 'model.pt', model, best_valid_loss)
-                    save_metrics(file_path + '/' + 'metrics.pt', train_loss_list, valid_loss_list, global_steps_list)
-    
-    save_metrics(file_path + '/' + 'metrics.pt', train_loss_list, valid_loss_list, global_steps_list)
-    print('Finished Training!')
+                    save_checkpoint('sen_bert.pt', model)
 
 if __name__ == '__main__':
     n_hidden = 512

@@ -43,7 +43,7 @@ if __name__ == '__main__':
     v_attention_dimensionality = 512
     best_model = BERT(768, n_hidden, n_hidden_decode, n_output, v_attention_dimensionality).to(device)
 
-    load_checkpoint("/home/ubuntu/NLPCourse/Assignment/Sentiment_analysis/Assignment4_BERTScratch/checkpoint" + '/model.pt', best_model)
+    load_checkpoint('sen_bert.pt', best_model)
 
     evaluate(best_model, test_iter)
 

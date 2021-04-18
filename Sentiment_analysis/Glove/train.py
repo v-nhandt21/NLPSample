@@ -111,4 +111,4 @@ if __name__ == '__main__':
     elif model_name=="att_bilstm_add":
         net = AttentionBiLSTM_Additive(TEXT, TAGS, n_embed, n_hidden, n_hidden_decode, n_output, layers, v_attention_dimensionality).cuda()
 
-    train(net,model_name+".pt")
+    train(net,"sen_"+model_name+".pt")
