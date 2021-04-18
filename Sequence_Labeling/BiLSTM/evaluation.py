@@ -40,7 +40,6 @@ def evaluate(model):
                     predicted_tags = [TAGS.vocab.itos[t] for t in top_predictions[0] ]
 
                     fw.write(" ".join(predicted_tags) + "\n")
-                    print(predicted_tags)
 
 
 if __name__ == '__main__':

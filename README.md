@@ -18,8 +18,8 @@ shell run.sh <mode> <problem> <model>
 With:
 * <mode> is  <train|evaluation>
 * <problem> is <sentiment|sequence>
-** If <problem> is <sentiment> , avaiable models are: <bert|rnn|lstm|gru|cnn|att_add|att_mul|att_dot|att_bilstm_add>
-** If <problem> is <sequence> , avaiable models are: <bert|bilstm>
+* <problem> is <sentiment> , avaiable models are: <bert|rnn|lstm|gru|cnn|att_add|att_mul|att_dot|att_bilstm_add>
+* <problem> is <sequence> , avaiable models are: <bert|bilstm>
 
 Example:
 ```

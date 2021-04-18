@@ -65,7 +65,7 @@ fi
 ##
 if [[( $3 == "bert")]];
 then
-python Sentiment_analysis/Glove/${1}.py bert
+python Sentiment_analysis/BERT/${1}.py bert
 fi
 
 ##

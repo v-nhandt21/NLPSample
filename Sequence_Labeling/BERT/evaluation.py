@@ -187,7 +187,6 @@ def evaluate(model, test_loader, tagvocab):
                 predicted_tags = predicted_tags[1:]
 
                 fw.write(" ".join(predicted_tags) + "\n")
-                print(predicted_tags)
     
 def check_infer():
     with open("Sequence_Labeling/data/test.label", "r", encoding="utf-8") as fr:
