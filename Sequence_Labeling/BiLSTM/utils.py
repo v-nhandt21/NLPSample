@@ -26,13 +26,14 @@ def NormData(filetext, filetag, fileout):
                 for text,tag in zip(texts,tags):
                     fw.write( text+ "\t"+tag+"\n")
 
-def save_checkpoint(save_path, model, valid_loss):
+def save_checkpoint(save_path, model):
 
     if save_path == None:
         return
     
-    state_dict = {'model_state_dict': model.state_dict(),
-                  'valid_loss': valid_loss}
+    save_path = "../../checkpoints/" + save_path
+
+    state_dict = {'model_state_dict': model.state_dict()}
     
     torch.save(state_dict, save_path)
     print(f'Model saved to ==> {save_path}')
@@ -41,36 +42,13 @@ def load_checkpoint(load_path, model):
     
     if load_path==None:
         return
+
+    load_path = "../../checkpoints/" + load_path
     
     state_dict = torch.load(load_path, map_location=device)
     print(f'Model loaded from <== {load_path}')
     
     model.load_state_dict(state_dict['model_state_dict'])
-    return state_dict['valid_loss']
-
-
-def save_metrics(save_path, train_loss_list, valid_loss_list, global_steps_list):
-
-    if save_path == None:
-        return
-    
-    state_dict = {'train_loss_list': train_loss_list,
-                  'valid_loss_list': valid_loss_list,
-                  'global_steps_list': global_steps_list}
-    
-    torch.save(state_dict, save_path)
-    print(f'Model saved to ==> {save_path}')
-
-
-def load_metrics(load_path):
-
-    if load_path==None:
-        return
-    
-    state_dict = torch.load(load_path, map_location=device)
-    print(f'Model loaded from <== {load_path}')
-    
-    return state_dict['train_loss_list'], state_dict['valid_loss_list'], state_dict['global_steps_list']
 
 def LoadData():
 
@@ -78,7 +56,7 @@ def LoadData():
     TAGS = Field(sequential=True, unk_token=None)
 
     fields = [('text', TEXT), ('tag', TAGS)]
-    train, valid, test = TabularDataset.splits(path="/home/ubuntu/NLPCourse/Assignment/Sequence_Labeling/", train='train.tsv', validation='dev.tsv',
+    train, valid, test = TabularDataset.splits(path="../data", train='train.tsv', validation='dev.tsv',
                                             test='test.tsv', format='TSV', fields=fields, skip_header=True)
 
     TAGS.build_vocab(train)

@@ -49,7 +49,7 @@ def LoadData():
                         preprocessing = tag_preprocessor)
 
     fields = [('text', TEXT), ('tag', TAGS)]
-    train, valid, test = TabularDataset.splits(path="/home/ubuntu/NLPCourse/Assignment/Sequence_Labeling/", train='train.tsv', validation='dev.tsv',
+    train, valid, test = TabularDataset.splits(path="../data", train='train.tsv', validation='dev.tsv',
                                             test='test.tsv', format='TSV', fields=fields, skip_header=True)
 
     TAGS.build_vocab(train)

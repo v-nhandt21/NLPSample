@@ -45,7 +45,7 @@ def LoadData():
 
     fields = [('label', TAGS), ('text', TEXT)]
 
-    train, valid, test = TabularDataset.splits(path="/home/ubuntu/NLPCourse/Assignment/Sentiment_analysis/data", train='train.tsv', validation='dev.tsv',
+    train, valid, test = TabularDataset.splits(path="../data", train='train.tsv', validation='dev.tsv',
                                             test='test.tsv', format='TSV', fields=fields, skip_header=True)
 
     device = "cuda"

@@ -1,5 +1,5 @@
 from model import AttentionBiLSTM_Seqence
-from utils import LoadData, save_checkpoint, save_metrics,loss_visual
+from utils import LoadData, save_checkpoint,loss_visual
 import torch
 import torch.optim as optim
 import torch.nn as nn

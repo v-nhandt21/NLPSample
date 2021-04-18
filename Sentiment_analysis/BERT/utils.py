@@ -16,7 +16,7 @@ def LoadData():
     text_field = Field(use_vocab=False, tokenize=tokenizer.encode, lower=False, include_lengths=False, batch_first=True,
                     fix_length=MAX_SEQ_LEN, pad_token=PAD_INDEX, unk_token=UNK_INDEX)
     fields = [('label', label_field), ('text', text_field)]
-    train, valid, test = TabularDataset.splits(path="/home/ubuntu/NLPCourse/Assignment/Sentiment_analysis/data", train='train.tsv', validation='dev.tsv',
+    train, valid, test = TabularDataset.splits(path="../data", train='train.tsv', validation='dev.tsv',
                                             test='test.tsv', format='TSV', fields=fields, skip_header=True)
 
     device = "cuda"
