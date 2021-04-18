@@ -16,6 +16,9 @@ train_iter, valid_iter, test_iter, TAGS, TEXT, fields = LoadData()
 
 def train(net,model_name):
 
+    if model_name == "cnn":
+        train_iter, valid_iter, test_iter, TAGS, TEXT, fields = LoadData(padding=True)
+
     criterion = nn.BCELoss()
     criterion = criterion.cuda()
     optimizer = optim.Adam(net.parameters(), lr = 0.001, weight_decay=0.0001)

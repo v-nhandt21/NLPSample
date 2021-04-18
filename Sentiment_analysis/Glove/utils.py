@@ -36,11 +36,14 @@ def Norm(text):
     return " ".join(filtered_sentence)
 
 
-def LoadData():
+def LoadData(padding=False):
 
     MAX_SEQ_LEN = 50
 
-    TEXT = Field(sequential=True, batch_first=True, pad_first=True)#,use_vocab=True, batch_first=True,fix_length=MAX_SEQ_LEN, pad_first=True ,tokenize=Norm)
+    if padding:
+        TEXT = Field(sequential=True, batch_first=True, pad_first=True,fix_length=MAX_SEQ_LEN)#,use_vocab=True, batch_first=True,fix_length=MAX_SEQ_LEN, pad_first=True ,tokenize=Norm)    
+    else:
+        TEXT = Field(sequential=True, batch_first=True, pad_first=True)
     TAGS = Field(sequential=False, use_vocab=False, batch_first=True, dtype=torch.float)
 
     fields = [('label', TAGS), ('text', TEXT)]
