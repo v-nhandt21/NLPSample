@@ -1,6 +1,6 @@
 # NLP Assignment
 
- :smile: Accessing github and checking out Colab with is the easiest way to evaluation, I have set up all the environment and all script for evaluation there :heart_eyes:
+ :smile: Accessing github and checking out Colab is the easiest way to evaluation, I have set up all environment, report visual, and all script for evaluation there :heart_eyes:
 
 ```
 https://github.com/NoahDrisort/NLPSample
