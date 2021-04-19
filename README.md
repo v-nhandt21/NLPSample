@@ -1,5 +1,7 @@
 # NLP Assignment
 
+Accessing github link then checking out Colab link with all script for evaluation is the easiest way to evaluation :smile: :heart_eyes:
+
 #### Evaluation on Colab
 
 Check this for all Report
